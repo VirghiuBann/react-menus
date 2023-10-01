@@ -9,8 +9,8 @@ const App = () => {
 
   return (
     <main>
-      <section className='container'>
-        <Title />
+      <Title />
+      <section className='section-center'>
         <Menu menuItems={menuItems} />
       </section>
     </main>
