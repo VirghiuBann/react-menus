@@ -15,6 +15,17 @@ const App = () => {
     return ['all', ...tempCategories]
   }
 
+  const filterByCategory = (category) => {
+    const menus = [...data]
+    if (category === 'all') {
+      setMenuItems([...menus])
+      return
+    }
+
+    const newMenus = menus.filter((item) => item.category === category)
+    setMenuItems([...newMenus])
+  }
+
   useEffect(() => {
     const uniqueCategories = getCategories()
     setCategories([...uniqueCategories])
@@ -23,7 +34,7 @@ const App = () => {
   return (
     <main>
       <Title />
-      <Categories categories={categories} />
+      <Categories categories={categories} filterByCategory={filterByCategory} />
       <section className='section-center'>
         <Menu menuItems={menuItems} />
       </section>

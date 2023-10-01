@@ -1,11 +1,15 @@
 import React from 'react'
 
-const Categories = ({ categories }) => {
+const Categories = ({ categories, filterByCategory }) => {
   return (
     <nav className='btn-container'>
       {categories.map((category, index) => {
         return (
-          <button className='btn' key={index}>
+          <button
+            className='btn'
+            key={index}
+            onClick={() => filterByCategory(category)}
+          >
             {category}
           </button>
         )
